@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -e
+
+usage() {
+	cat <<- EOF
+
+	usage: git feature-branch <new_feature> <upstream>...
+
+	Creates a new branch <new_feature> from the common ancestor
+	of all <upstream> branches. <new_feature> will cleanly
+	merge to all <upstream> branches.
+
+	EOF
+	exit 0
+}
+
+main() {
+	[ "$#" -gt 1 ] || usage
+	local feature_branch=$1
+	shift
+	local merge_branches=$*
+
+	git checkout -b $feature_branch $(git merge-base --octopus $merge_branches)
+}
+
+main $*
