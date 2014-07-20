@@ -1,9 +1,8 @@
-git-feature-branch
-==================
+#git-feature-branch
 
 Start a feature branch that will cleanly merge to other branches
 
-#Usage
+##Usage
 
 `git feature-branch <new_feature> <upstream>...`
 
