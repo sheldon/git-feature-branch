@@ -5,11 +5,13 @@ set -e
 usage() {
 	cat <<- EOF
 
-	usage: git feature-branch <new_feature> <upstream>...
+	usage: git feature-branch <new_feature> [<upstream>...]
 
 	Creates a new branch <new_feature> from the common ancestor
 	of all <upstream> branches. <new_feature> will cleanly
 	merge to all <upstream> branches.
+
+	If <upstream> is not specified it will default to origin/HEAD.
 
 	EOF
 	exit 0
@@ -19,9 +21,15 @@ main() {
 	[ "$#" -gt 1 ] || usage
 	local feature_branch=$1
 	shift
-	local merge_branches=$*
+	local upstreams=$*
 
-	git checkout -b $feature_branch $(git merge-base --octopus $merge_branches)
+	if [[ -z $upstreams ]]; then
+		upstreams="origin/master"
+	fi
+
+	local merge_base=$(git merge-base --octopus $upstreams)
+
+	git checkout -b $new_feature $merge_base
 }
 
 main $*
