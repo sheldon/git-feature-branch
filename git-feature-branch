@@ -13,6 +13,8 @@ usage() {
 
 	If <upstream> is not specified it will default to origin/HEAD.
 
+	<upstream>... can be configured with: git config feature-branch.upstreams
+
 	EOF
 	exit 0
 }
@@ -24,6 +26,10 @@ main() {
 	local new_feature=$1
 	shift
 	local upstreams=$*
+
+	if [[ -z $upstreams ]]; then
+		upstreams=$(git config feature-branch.upstreams)
+	fi
 
 	if [[ -z $upstreams ]]; then
 		upstreams="origin/master"
