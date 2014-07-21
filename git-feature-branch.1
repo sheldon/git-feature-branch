@@ -8,12 +8,18 @@ git feature-branch <new_feature> [<upstream>...]
 .SH DESCRIPTION
 Creates a new branch <new_feature> from the common ancestor of all <upstream> branches. <new_feature> will cleanly merge to all <upstream> branches.
 .SH OPTIONS
+.PP
 <new_feature>
-	The name of the new feature.
+.RS 4
+The name of the new feature.
+.RE
+.PP
 <upstream>...
-	The series of branches to be able to merge your new feature to in isolation from each other.
+.RS 4
+The series of branches to be able to merge your new feature to in isolation from each other.
+.RE
 .SH SEE ALSO
-	git-merge-base(1)
+git-merge-base(1)
 .SH BUGS
 No known bugs.
 .SH AUTHOR
