@@ -28,11 +28,11 @@ main() {
 	local upstreams=$*
 
 	if [[ -z $upstreams ]]; then
-		upstreams=$(git config feature-branch.upstreams)
+		local upstreams=$(git config feature-branch.upstreams)
 	fi
 
 	if [[ -z $upstreams ]]; then
-		upstreams="origin/master"
+		local upstreams="origin/master"
 	fi
 
 	local merge_base=$(git merge-base --octopus $upstreams)
