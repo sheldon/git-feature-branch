@@ -18,8 +18,10 @@ usage() {
 }
 
 main() {
-	[ "$#" -gt 1 ] || usage
-	local feature_branch=$1
+	# require first argument
+	[ "$#" -gt 0 ] || usage
+
+	local new_feature=$1
 	shift
 	local upstreams=$*
 
