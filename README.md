@@ -14,7 +14,7 @@ If `<upstream>` is not specified it will default to origin/master.
 
 ##Install
 
-1. `sudo wget https://raw.githubusercontent.com/sheldon/git-feature-branch/v0.3.1/git-feature-branch > /usr/local/bin/git-feature-branch`
+1. `sudo curl 'https://raw.githubusercontent.com/sheldon/git-feature-branch/v0.3.1/git-feature-branch' > /usr/local/bin/git-feature-branch && chmod 755 /usr/local/bin/git-feature-branch`
 
 Or for those with [homebrew](http://brew.sh/)
 
