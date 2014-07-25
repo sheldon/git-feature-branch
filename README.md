@@ -16,9 +16,4 @@ If `<upstream>` is not specified it will default to origin/master.
 
 Download and put somewhere in your $PATH
 
-1. `sudo curl 'https://raw.githubusercontent.com/sheldon/git-feature-branch/v0.3.1/git-feature-branch' > /usr/local/bin/git-feature-branch`
-2. `sudo chmod 755 /usr/local/bin/git-feature-branch`
-
-Or for those with [homebrew](http://brew.sh/)
-
-1. `brew install sheldon/git-feature-branch/git-feature-branch`
+For those with [homebrew](http://brew.sh/) `brew install sheldon/git-feature-branch/git-feature-branch`
