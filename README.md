@@ -14,4 +14,8 @@ If `<upstream>` is not specified it will default to origin/master.
 
 ##Install
 
-`brew install sheldon/git-feature-branch/git-feature-branch`
+1. `sudo wget https://raw.githubusercontent.com/sheldon/git-feature-branch/v0.3.1/git-feature-branch > /usr/local/bin/git-feature-branch`
+
+Or for those with [homebrew](http://brew.sh/)
+
+1. `brew install sheldon/git-feature-branch/git-feature-branch`
